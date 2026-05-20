@@ -43,3 +43,4 @@ To deploy this as a public website accessible on your mobile devices:
 
 ---
 *Built with PyTorch, Flask, and Transformers.*
+# dental-ai-diagonosis
