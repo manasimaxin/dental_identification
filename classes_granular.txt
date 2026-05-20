@@ -1,0 +1,8 @@
+Acute_Caries
+Chronic_Caries
+Pit_and_Fissure_Caries
+Primary_Caries
+Rampant_Caries
+Root_Caries
+Secondary_Caries
+Smooth_Surface_Caries

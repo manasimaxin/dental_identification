@@ -1,0 +1,15 @@
+{
+  "name": "Dental Diagnosis AI",
+  "short_name": "DentalAI",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2818/2818366.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

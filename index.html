@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Dental Diagnosis AI</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="manifest" href="/static/manifest.json">
+    <meta name="theme-color" content="#2563eb">
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Step 1: Registration -->
+      <section id="stepRegistration" class="step-container active">
+        <nav class="navbar">
+          <div class="logo">🦷 Dental AI</div>
+        </nav>
+        <div class="registration-form card">
+          <h2>Patient Registration</h2>
+          <p class="subtitle">Enter details to start diagnosis</p>
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="patientName" placeholder="John Doe" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Age</label>
+              <input type="number" id="patientAge" placeholder="25" required>
+            </div>
+            <div class="form-group">
+              <label>Gender</label>
+              <select id="patientGender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <button id="startCaptureBtn" class="btn btn-primary">Start Diagnosis</button>
+        </div>
+      </section>
+
+      <!-- Step 2: Smart Camera -->
+      <section id="stepCamera" class="step-container">
+        <div class="camera-ui">
+          <video id="video" autoplay playsinline muted></video>
+          <canvas id="stabilityCanvas" style="display:none;"></canvas>
+          
+          <!-- Alignment Guide -->
+          <div class="camera-overlay">
+            <div class="alignment-guide"></div>
+            <div class="camera-hints">
+              <p id="cameraStatus">Center your teeth in the box</p>
+              <div class="status-indicators">
+                <span id="indicatorLight" class="indicator">💡 Light</span>
+                <span id="indicatorSteady" class="indicator">⚖️ Steady</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="camera-controls">
+            <button id="backToRegBtn" class="btn btn-secondary">Back</button>
+            <div class="auto-capture-label">Auto-capturing...</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 3: Analysis Loading -->
+      <section id="stepLoading" class="step-container">
+        <div class="loading-view card">
+          <div class="spinner"></div>
+          <h3>Analyzing Image</h3>
+          <p>Scanning for caries and generating heatmaps...</p>
+        </div>
+      </section>
+
+      <!-- Step 4: Results Report -->
+      <section id="stepResults" class="step-container">
+        <div class="report-view">
+          <div class="report-header">
+            <div class="patient-chip">ID: <span id="reportId">---</span></div>
+            <h2>Diagnosis Report</h2>
+          </div>
+          
+          <div id="reportContent">
+            <!-- Dynamic results inserted here -->
+          </div>
+
+          <div class="report-actions">
+            <button id="newDiagnosisBtn" class="btn btn-primary">New Diagnosis</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Error Modal -->
+      <div id="errorModal" class="modal">
+        <div class="modal-content card">
+          <h3>Capture Refused</h3>
+          <ul id="errorList"></ul>
+          <button id="closeErrorBtn" class="btn btn-primary">Try Again</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
