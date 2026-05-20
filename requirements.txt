@@ -1,6 +1,2 @@
-flask
-transformers
-torch
-torchvision
-opencv-python-headless
-Pillow
+fastapi
+uvicorn[standard]
